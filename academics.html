@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Bright Future Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Bright Future Academy Logo" class="logo">
+            <h1>Bright Future Academy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="academics.html" class="active">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Academic Programs</h2>
+            <p>Nurturing Minds, Shaping Futures</p>
+        </section>
+
+        <section class="academic-levels">
+            <div class="level-tabs">
+                <button class="tab-button active" onclick="openLevel('kindergarten')">Kindergarten</button>
+                <button class="tab-button" onclick="openLevel('primary')">Primary</button>
+                <button class="tab-button" onclick="openLevel('jhs')">Junior High</button>
+                <button class="tab-button" onclick="openLevel('shs')">Senior High</button>
+            </div>
+
+            <div id="kindergarten" class="level-content active">
+                <div class="level-description">
+                    <h3>Kindergarten (Ages 3-5)</h3>
+                    <p>Our kindergarten program provides a nurturing environment where young children develop foundational skills through play-based learning. We focus on:</p>
+                    <ul>
+                        <li>Early literacy and numeracy</li>
+                        <li>Social and emotional development</li>
+                        <li>Creative expression through art and music</li>
+                        <li>Physical development and coordination</li>
+                        <li>Basic computer skills</li>
+                    </ul>
+                    <p>Our qualified teachers use the Ghana Education Service curriculum enhanced with Montessori-inspired activities.</p>
+                </div>
+                <div class="level-image">
+                    <img src="images/kindergarten-class.jpg" alt="Kindergarten Class">
+                </div>
+            </div>
+
+            <div id="primary" class="level-content">
+                <div class="level-description">
+                    <h3>Primary School (Grades 1-6)</h3>
+                    <p>Our primary program builds on the foundation laid in kindergarten, offering a comprehensive curriculum that includes:</p>
+                    <ul>
+                        <li>English Language and Ghanaian Languages</li>
+                        <li>Mathematics and Science</li>
+                        <li>Social Studies and Citizenship Education</li>
+                        <li>Information and Communication Technology</li>
+                        <li>Creative Arts and Physical Education</li>
+                    </ul>
+                    <p>We emphasize critical thinking, problem-solving, and the development of good study habits.</p>
+                </div>
+                <div class="level-image">
+                    <img src="images/primary-class.jpg" alt="Primary Class">
+                </div>
+            </div>
+
+            <div id="jhs" class="level-content">
+                <div class="level-description">
+                    <h3>Junior High School (Grades 7-9)</h3>
+                    <p>Our JHS program prepares students for the Basic Education Certificate Examination (BECE) with a strong academic foundation:</p>
+                    <ul>
+                        <li>Core subjects: English, Math, Integrated Science, Social Studies</li>
+                        <li>ICT and French</li>
+                        <li>Pre-Technical and Pre-Vocational Skills</li>
+                        <li>Religious and Moral Education</li>
+                    </ul>
+                    <p>We offer after-school tutoring and exam preparation classes to ensure student success.</p>
+                </div>
+                <div class="level-image">
+                    <img src="images/jhs-class.jpg" alt="JHS Class">
+                </div>
+            </div>
+
+            <div id="shs" class="level-content">
+                <div class="level-description">
+                    <h3>Senior High School (Grades 10-12)</h3>
+                    <p>Our SHS program offers both General Arts and Science programs leading to the WASSCE:</p>
+                    <div class="shs-tracks">
+                        <div class="track">
+                            <h4>General Arts</h4>
+                            <ul>
+                                <li>English Language</li>
+                                <li>Mathematics (Elective)</li>
+                                <li>Government</li>
+                                <li>Economics</li>
+                                <li>Geography</li>
+                                <li>Christian Religious Studies</li>
+                            </ul>
+                        </div>
+                        <div class="track">
+                            <h4>General Science</h4>
+                            <ul>
+                                <li>English Language</li>
+                                <li>Mathematics (Core and Elective)</li>
+                                <li>Integrated Science</li>
+                                <li>Physics</li>
+                                <li>Chemistry</li>
+                                <li>Biology</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>Our SHS boasts a 98% WASSCE pass rate with many students gaining admission to top universities.</p>
+                </div>
+                <div class="level-image">
+                    <img src="images/shs-class.jpg" alt="SHS Class">
+                </div>
+            </div>
+        </section>
+
+        <section class="facilities">
+            <h2>Academic Facilities</h2>
+            <div class="facilities-container">
+                <div class="facility">
+                    <img src="images/library.jpg" alt="School Library">
+                    <h3>Modern Library</h3>
+                    <p>Our well-stocked library with over 10,000 books and digital resources supports student learning.</p>
+                </div>
+                <div class="facility">
+                    <img src="images/science-lab.jpg" alt="Science Lab">
+                    <h3>Science Laboratories</h3>
+                    <p>Fully equipped labs for physics, chemistry, and biology practicals.</p>
+                </div>
+                <div class="facility">
+                    <img src="images/computer-lab.jpg" alt="Computer Lab">
+                    <h3>Computer Laboratory</h3>
+                    <p>State-of-the-art computer lab with high-speed internet access.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="academic-calendar">
+            <h2>Academic Calendar</h2>
+            <div class="calendar-container">
+                <div class="term">
+                    <h3>First Term 2023/2024</h3>
+                    <p><strong>Opening Date:</strong> September 4, 2023</p>
+                    <p><strong>Mid-Term Break:</strong> October 16-20, 2023</p>
+                    <p><strong>Closing Date:</strong> December 15, 2023</p>
+                </div>
+                <div class="term">
+                    <h3>Second Term 2023/2024</h3>
+                    <p><strong>Opening Date:</strong> January 8, 2024</p>
+                    <p><strong>Mid-Term Break:</strong> February 19-23, 2024</p>
+                    <p><strong>Closing Date:</strong> April 5, 2024</p>
+                </div>
+                <div class="term">
+                    <h3>Third Term 2023/2024</h3>
+                    <p><strong>Opening Date:</strong> May 6, 2024</p>
+                    <p><strong>Mid-Term Break:</strong> June 10-14, 2024</p>
+                    <p><strong>Closing Date:</strong> August 2, 2024</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Oxford Street, Accra</p>
+                <p>Phone: +233 24 123 4567</p>
+                <p>Email: info@brightfuture.edu.gh</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="images/facebook-icon.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="images/twitter-icon.jpg" alt="Twitter"></a>
+                    <a href="#"><img src="images/instagram-icon.jpg" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bright Future Academy, Ghana. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
