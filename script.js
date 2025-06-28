@@ -1,5 +1,5 @@
-// Mobile Navigation and Scroll Behavior
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Navigation and Scroll Behavior
     const header = document.querySelector('.site-header');
     const nav = document.querySelector('.main-nav');
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -7,11 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollThreshold = 100;
 
     // Mobile menu toggle
-    mobileToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        nav.classList.toggle('active');
-        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    });
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+    }
 
     // Scroll detection for header
     window.addEventListener('scroll', function() {
@@ -19,18 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentScroll = window.pageYOffset;
             
             if (currentScroll <= 0) {
-                // At top of page
                 header.classList.remove('hide');
                 header.classList.add('show');
             } else if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
-                // Scrolling down
                 header.classList.add('hide');
                 header.classList.remove('show');
-                nav.classList.remove('active');
-                mobileToggle.classList.remove('active');
+                if (nav) nav.classList.remove('active');
+                if (mobileToggle) mobileToggle.classList.remove('active');
                 document.body.style.overflow = '';
             } else if (currentScroll < lastScroll) {
-                // Scrolling up
                 header.classList.remove('hide');
                 header.classList.add('show');
             }
@@ -40,25 +39,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close menu when clicking links
-    document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            mobileToggle.classList.remove('active');
-            document.body.style.overflow = '';
+    if (nav) {
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                if (mobileToggle) mobileToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
-    });
-
-    // Tab functionality for Academics page
-    function openLevel(levelId) {
-        const levelContents = document.querySelectorAll('.level-content');
-        const tabButtons = document.querySelectorAll('.tab-button');
-        
-        levelContents.forEach(content => content.classList.remove('active'));
-        tabButtons.forEach(button => button.classList.remove('active'));
-        
-        document.getElementById(levelId).classList.add('active');
-        event.currentTarget.classList.add('active');
     }
+
+    // Academics Page Tab System
+    function setupAcademicTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const levelContents = document.querySelectorAll('.level-content');
+
+        if (tabButtons.length > 0 && levelContents.length > 0) {
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    levelContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const levelId = this.getAttribute('data-level');
+                    document.getElementById(levelId).classList.add('active');
+                });
+            });
+        }
+    }
+    setupAcademicTabs();
 
     // FAQ functionality
     const faqQuestions = document.querySelectorAll('.faq-question');
